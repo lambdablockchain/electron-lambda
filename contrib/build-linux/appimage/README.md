@@ -1,4 +1,4 @@
-AppImage binary for Electron Novo
+AppImage binary for Electron lambda
 ============================
 
 ✓ _This binary is reproducible: you should be able to generate
@@ -29,4 +29,4 @@ folder.
 ## FAQ
 
 ### How can I see what is included in the AppImage?
-Execute the binary as follows: `./Electron-Novo*.AppImage --appimage-extract`
+Execute the binary as follows: `./Electron-lambda*.AppImage --appimage-extract`

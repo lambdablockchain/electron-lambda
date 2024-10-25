@@ -36,7 +36,7 @@ with io.open('README.rst', encoding='utf8') as readme:
 setup(
     name=compact_name, # comes from common.sh
     version=version,
-    description='A Novo SPV Wallet',
+    description='A lambda SPV Wallet',
     long_description=long_description,
     author='Calin Culianu',
     author_email='calin.culianu@gmail.com',

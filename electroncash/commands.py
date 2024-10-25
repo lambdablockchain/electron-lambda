@@ -183,8 +183,8 @@ class Commands:
     @command('')
     def restore(self, text, passphrase=None, password=None, encrypt_file=True, wallet_path=None):
         """Restore a wallet from text. Text can be a seed phrase, a master
-        public key, a master private key, a list of Novo addresses
-        or Novo private keys.
+        public key, a master private key, a list of lambda addresses
+        or lambda private keys.
         If you want to be prompted for an argument, type '?' or ':' (concealed)
         """
         d = restore_wallet_from_text(text,
@@ -418,7 +418,7 @@ class Commands:
 
     @command('n')
     def getmerkle(self, txid, height):
-        """Get Merkle branch of a transaction included in a block. Electron Novo
+        """Get Merkle branch of a transaction included in a block. Electron lambda
         uses this to verify transactions (Simple Payment Verification)."""
         return self.network.synchronous_get(('blockchain.transaction.get_merkle', [txid, int(height)]))
 
@@ -429,7 +429,7 @@ class Commands:
 
     @command('')
     def version(self):
-        """Return the version of Electron Novo."""
+        """Return the version of Electron lambda."""
         from .version import PACKAGE_VERSION
         return PACKAGE_VERSION
 
@@ -550,7 +550,7 @@ class Commands:
 
     @command('w')
     def rpa_generate_transaction_from_paycode(self, amount, paycode):
-        # WARNING: Amount is in full Novo units
+        # WARNING: Amount is in full lambda units
         return rpa.paycode.generate_transaction_from_paycode(self.wallet, self.config, amount, paycode)
 
     @command('wp')
@@ -845,8 +845,8 @@ class Commands:
 param_descriptions = {
     'wallet_path': 'Wallet path(create/restore commands)',
     'privkey': 'Private key. Type \'?\' to get a prompt.',
-    'destination': 'Novo address, contact or alias',
-    'address': 'Novo address',
+    'destination': 'lambda address, contact or alias',
+    'address': 'lambda address',
     'seed': 'Seed phrase',
     'txid': 'Transaction ID',
     'pos': 'Position',
@@ -1001,7 +1001,7 @@ def add_network_options(parser):
 def add_global_options(parser):
     group = parser.add_argument_group('global options')
     group.add_argument("-v", "--verbose", action="store_true", dest="verbose", default=False, help="Show debugging information")
-    group.add_argument("-D", "--dir", dest="electron_cash_path", help="Electron Novo directory")
+    group.add_argument("-D", "--dir", dest="electron_cash_path", help="Electron lambda directory")
     group.add_argument("-P", "--portable", action="store_true", dest="portable", default=False, help="Use local 'electron_cash_data' directory")
     group.add_argument("-w", "--wallet", dest="wallet_path", help="wallet path")
     group.add_argument("-wp", "--walletpassword", dest="wallet_password", default=None, help="Supply wallet password")
@@ -1017,7 +1017,7 @@ def get_parser():
     add_global_options(parser)
     subparsers = parser.add_subparsers(dest='cmd', metavar='<command>')
     # gui
-    parser_gui = subparsers.add_parser('gui', description="Run Electron Novo's Graphical User Interface.", help="Run GUI (default)")
+    parser_gui = subparsers.add_parser('gui', description="Run Electron lambda's Graphical User Interface.", help="Run GUI (default)")
     parser_gui.add_argument("url", nargs='?', default=None, help="bitcoin URI (or bip70 file)")
     parser_gui.add_argument("-g", "--gui", dest="gui", help="select graphical user interface", choices=['qt', 'text', 'stdio'])
     parser_gui.add_argument("-o", "--offline", action="store_true", dest="offline", default=False, help="Run offline")

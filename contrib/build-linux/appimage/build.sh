@@ -14,7 +14,7 @@ else
 fi
 
 if [ ! -d 'contrib' ]; then
-    fail "Please run this script form the top-level Electron Novo git directory"
+    fail "Please run this script form the top-level Electron lambda git directory"
 fi
 
 pushd .
@@ -49,15 +49,15 @@ fi
 DOCKER_SUFFIX=ub1804
 
 info "Creating docker image ..."
-$SUDO docker build -t electronnovo-appimage-builder-img-$DOCKER_SUFFIX \
+$SUDO docker build -t electronlambda-appimage-builder-img-$DOCKER_SUFFIX \
     -f contrib/build-linux/appimage/Dockerfile_$DOCKER_SUFFIX \
     --build-arg UBUNTU_MIRROR=$UBUNTU_MIRROR \
     contrib/build-linux/appimage \
     || fail "Failed to create docker image"
 
 # This is the place where we checkout and put the exact revision we want to work
-# on. Docker will run mapping this directory to /opt/electronnovo
-# which inside wine will look lik c:\electronnovo
+# on. Docker will run mapping this directory to /opt/electronlambda
+# which inside wine will look lik c:\electronlambda
 FRESH_CLONE=`pwd`/contrib/build-linux/fresh_clone
 FRESH_CLONE_DIR=$FRESH_CLONE/$GIT_DIR_NAME
 
@@ -76,15 +76,15 @@ mkdir "$FRESH_CLONE_DIR/contrib/build-linux/home" || fail "Failed to create home
     # NOTE: We propagate forward the GIT_REPO override to the container's env,
     # just in case it needs to see it.
     $SUDO docker run $DOCKER_RUN_TTY \
-    -e HOME="/opt/electronnovo/contrib/build-linux/home" \
+    -e HOME="/opt/electronlambda/contrib/build-linux/home" \
     -e GIT_REPO="$GIT_REPO" \
     -e BUILD_DEBUG="$BUILD_DEBUG" \
-    --name electronnovo-appimage-builder-cont-$DOCKER_SUFFIX \
-    -v $FRESH_CLONE_DIR:/opt/electronnovo:delegated \
+    --name electronlambda-appimage-builder-cont-$DOCKER_SUFFIX \
+    -v $FRESH_CLONE_DIR:/opt/electronlambda:delegated \
     --rm \
-    --workdir /opt/electronnovo/contrib/build-linux/appimage \
+    --workdir /opt/electronlambda/contrib/build-linux/appimage \
     -u $(id -u $USER):$(id -g $USER) \
-    electronnovo-appimage-builder-img-$DOCKER_SUFFIX \
+    electronlambda-appimage-builder-img-$DOCKER_SUFFIX \
     ./_build.sh $REV
 ) || fail "Build inside docker container failed"
 

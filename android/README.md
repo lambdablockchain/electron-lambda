@@ -1,4 +1,4 @@
-# Electron Novo Android app
+# Electron lambda Android app
 
 To start developing the app, just open this directory in Android Studio.
 

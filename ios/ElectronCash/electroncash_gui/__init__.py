@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# Electron Novo - lightweight Novo client
+# Electron lambda - lightweight lambda client
 # Copyright (C) 2012 thomasv@gitorious
 #
 # This file is:

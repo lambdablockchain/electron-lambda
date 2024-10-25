@@ -1,4 +1,4 @@
-# Electron Novo - lightweight Novo client
+# Electron lambda - lightweight lambda client
 # Copyright (C) 2011 thomasv@gitorious
 # Copyright (C) 2017 Neil Booth
 #
@@ -40,8 +40,8 @@ class AbstractNet:
     LEGACY_POW_TARGET_TIMESPAN = 14 * 24 * 60 * 60   # 2 weeks
     LEGACY_POW_TARGET_INTERVAL = 10 * 60  # 10 minutes
     LEGACY_POW_RETARGET_BLOCKS = LEGACY_POW_TARGET_TIMESPAN // LEGACY_POW_TARGET_INTERVAL  # 2016 blocks
-    BASE_UNITS = {'NOVO': 4, 'mNOVO': 1, 'sats': 0}
-    DEFAULT_UNIT = "NOVO"
+    BASE_UNITS = {'lambda': 4, 'mlambda': 1, 'sats': 0}
+    DEFAULT_UNIT = "lambda"
 
 
 class MainNet(AbstractNet):
@@ -55,11 +55,11 @@ class MainNet(AbstractNet):
     GENESIS = "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"
     DEFAULT_PORTS = {'t': '50001', 's': '50002'}
     DEFAULT_SERVERS = _read_json_dict('servers.json')  # DO NOT MODIFY IN CLIENT CODE
-    TITLE = 'Electron Novo'
+    TITLE = 'Electron Lamba'
 
-    # Novo fork block specification
+    # lambda fork block specification
     BITCOIN_CASH_FORK_BLOCK_HEIGHT = 120
-    BITCOIN_CASH_FORK_BLOCK_HASH = "000000000000000000651ef99cb9fcbe0dadde1d424bd9f15ff20136191a5eec"
+    BITCOIN_CASH_FORK_BLOCK_HASH = "00000000343953f1ed4881e476c9e1206976bfcf2cc86872d28ff6df9d879d18"
 
     # Nov 13. 2017 HF to CW144 DAA height (height of last block mined on old DAA)
     CW144_HEIGHT = 504031
@@ -102,14 +102,14 @@ class TestNet(AbstractNet):
     GENESIS = "000000000933ea01ad0ee984209779baaec3ced90fa3f408719526f8d77f4943"
     DEFAULT_PORTS = {'t':'51001', 's':'51002'}
     DEFAULT_SERVERS = _read_json_dict('servers_testnet.json')  # DO NOT MODIFY IN CLIENT CODE
-    TITLE = 'Electron Novo Testnet'
+    TITLE = 'Electron lambda Testnet'
     BASE_UNITS = {'tBCH': 8, 'mtBCH': 5, 'tbits': 2}
     DEFAULT_UNIT = "tBCH"
 
     # Nov 13. 2017 HF to CW144 DAA height (height of last block mined on old DAA)
     CW144_HEIGHT = 1188697
 
-    # Novo fork block specification
+    # lambda fork block specification
     BITCOIN_CASH_FORK_BLOCK_HEIGHT = 1155876
     BITCOIN_CASH_FORK_BLOCK_HASH = "00000000000e38fef93ed9582a7df43815d5c2ba9fd37ef70c9a0ea4a285b8f5"
 
@@ -131,7 +131,7 @@ class TestNet(AbstractNet):
 
 class TestNet4(TestNet):
     GENESIS = "000000001dd410c49a788668ce26751718cc797474d3152a5fc073dd44fd9f7b"
-    TITLE = 'Electron Novo Testnet4'
+    TITLE = 'Electron lambda Testnet4'
 
     HEADERS_URL = "http://bitcoincash.com/files/testnet4_headers"  # Unused
 
@@ -152,7 +152,7 @@ class TestNet4(TestNet):
 
 class ScaleNet(TestNet):
     GENESIS = "00000000e6453dc2dfe1ffa19023f86002eb11dbb8e87d0291a4599f0430be52"
-    TITLE = 'Electron Novo Scalenet'
+    TITLE = 'Electron lambda Scalenet'
     BASE_UNITS = {'sBCH': 8, 'msBCH': 5, 'sbits': 2}
     DEFAULT_UNIT = "tBCH"
 

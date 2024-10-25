@@ -133,9 +133,9 @@ class TestCashAddrAddress(unittest.TestCase):
         with self.assertRaises(ValueError):
             cashaddr.decode("ppm2qsznhks23z7629mms6s4cwef74vcwvn0h82")
         with self.assertRaises(ValueError):
-            cashaddr.decode("Novo:ppm2qsznhks23z7629mms6s4cwef74vcwvn0h82")
+            cashaddr.decode("lambda:ppm2qsznhks23z7629mms6s4cwef74vcwvn0h82")
         with self.assertRaises(ValueError):
-            cashaddr.decode("Novo:ab")
+            cashaddr.decode("lambda:ab")
         # b is invalid
         with self.assertRaises(ValueError):
             cashaddr.decode("bitcoincash:ppm2qsznbks23z7629mms6s4cwef74vcwvn0h82")

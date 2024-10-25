@@ -3,8 +3,8 @@
 # Electrum - lightweight Bitcoin client
 # Copyright (C) 2014 Thomas Voegtlin
 #
-# Electron Novo - lightweight Novo client
-# Copyright (C) 2019 The Electron Novo Developers
+# Electron lambda - lightweight lambda client
+# Copyright (C) 2019 The Electron lambda Developers
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files

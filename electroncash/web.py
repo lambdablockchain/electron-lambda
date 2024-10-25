@@ -38,13 +38,13 @@ from . import cashacct
 from .i18n import _
 
 
-DEFAULT_EXPLORER = "Novoexplorer.com"
+DEFAULT_EXPLORER = "lambdaexplorer.com"
 
 mainnet_block_explorers = {
-    'Novoexplorer.com': ('novoexplorer.com',
+    'lambdaexplorer.com': ('lambdaexplorer.com',
                        Address.FMT_LEGACY,
                        {'tx': 'tx', 'addr': 'address', 'block' : 'block'}),
-    'Novochain.ovh': ('explorer.novochain.ovh',
+    'lambdachain.ovh': ('explorer.lambdachain.ovh',
                        Address.FMT_LEGACY,
                        {'tx': 'tx', 'addr': 'address', 'block' : 'block'}),
 }

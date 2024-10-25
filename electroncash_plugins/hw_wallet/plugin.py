@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 #
-# Electron Novo - lightweight Novo client
+# Electron lambda - lightweight lambda client
 # Copyright (C) 2016  The Electrum developers
-# Copyright (C) 2019  The Electron Novo developers
+# Copyright (C) 2019  The Electron lambda developers
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files

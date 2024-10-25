@@ -42,7 +42,7 @@ ENV WINEVERSION=7.7~${UBUNTUDIST}-1
 RUN apt-get update -q && \
     apt-get install -y curl && \
     curl -fsSL https://dl.winehq.org/wine-builds/winehq.key -o /tmp/winehq.key && \
-    echo "78b185fabdb323971d13bd329fefc8038e08559aa51c4996de18db0639a51df6 /tmp/winehq.key" | sha256sum -c - || exit 1 && \
+    echo "d965d646defe94b3dfba6d5b4406900ac6c81065428bf9d9303ad7a72ee8d1b8 /tmp/winehq.key" | sha256sum -c - || exit 1 && \
     apt-key add /tmp/winehq.key && \
     echo deb https://dl.winehq.org/wine-builds/ubuntu/ ${UBUNTUDIST} main >> /etc/apt/sources.list && \
     apt-get update -q && \
@@ -74,7 +74,7 @@ ENV WINEARCH=win32
 ENV WINEPREFIX=${HOME}/wine
 ENV WINEDEBUG=-all
 
-RUN mkdir -p ${WINEPREFIX}/drive_c/electronnovo ; chown -R ${USER_ID}:${GROUP_ID} ${HOME}
+RUN mkdir -p ${WINEPREFIX}/drive_c/electronlambda ; chown -R ${USER_ID}:${GROUP_ID} ${HOME}
 
 # Make our UID/GID have an actual user name, this is needed so wineboot creates the right folders and
 # the Visual Studio installer does't fail in SHGetKnownFolderPath with error 0x80070003 (ERROR_PATH_NOT_FOUND).

@@ -43,7 +43,7 @@ class ExchangeBase(PrintError):
     def get_json(self, site, get_string):
         # APIs must have https
         url = ''.join(['https://', site, get_string])
-        response = requests.request('GET', url, headers={'User-Agent' : 'Electron Novo'}, timeout=10)
+        response = requests.request('GET', url, headers={'User-Agent' : 'Electron lambda'}, timeout=10)
         if response.status_code != 200:
             raise RuntimeWarning("Response status: " + str(response.status_code))
         return response.json()
@@ -154,17 +154,17 @@ class ExchangeBase(PrintError):
 class Garlix(ExchangeBase):
     def get_rates(self, ccy):
         json = self.get_json('garlix.io', '/api/gecko/tickers')
-        rate = [x for x in json if x['ticker_id'] == 'NOVO_USDT'][0]
+        rate = [x for x in json if x['ticker_id'] == 'lambda_USDT'][0]
         return {'USD': PyDecimal(rate['last_price']) * 10000}
 
 class Xeggex(ExchangeBase):
     def get_rates(self, ccy):
-        json = self.get_json('xeggex.com', '/api/v2/market/getbysymbol/NOVO_USDT')
+        json = self.get_json('xeggex.com', '/api/v2/market/getbysymbol/lambda_USDT')
         return {'USD': PyDecimal(json['lastPrice']) * 10000}
 
 class Txbit(ExchangeBase):
     def get_rates(self, ccy):
-        json = self.get_json('api.txbit.io', '/api/public/getticker?market=NOVO/USDT')
+        json = self.get_json('api.txbit.io', '/api/public/getticker?market=lambda/USDT')
         return {'USD': PyDecimal(json['result']['Last']) * 10000}
 
 def dictinvert(d):

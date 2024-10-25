@@ -14,7 +14,7 @@ else
 fi
 
 if [ ! -d 'contrib' ]; then
-    fail "Please run this script form the top-level Electron Novo git directory"
+    fail "Please run this script form the top-level Electron lambda git directory"
 fi
 
 pushd .

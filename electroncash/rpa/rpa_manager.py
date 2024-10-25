@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# Electron Novo - lightweight Novo client
+# Electron lambda - lightweight lambda client
 # Copyright (C) 2021 Fyookball
 #
 # Permission is hereby granted, free of charge, to any person

@@ -1,14 +1,8 @@
 {
-  "novo.vn.ekapool.com": {
+  "0.0.0.0": {
     "pruning": "-",
-    "s": "50012",
-    "t": "50010",
-    "version": "1.5"
-  },
-  "novoelectron1.ddns.net": {
-    "pruning": "-",
-    "s": "50012",
-    "t": "50010",
-    "version": "1.5"
+    "s": "50010",
+    "t": "50020",
+    "version": "1.4"
   }
 }

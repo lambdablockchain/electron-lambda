@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# Electron Novo - lightweight Novo client
+# Electron lambda - lightweight lambda client
 # Copyright (C) 2014 Thomas Voegtlin
 # Copyright (C) 2019 Calin Culianu <calin.culianu@gmail.com>
 #
@@ -295,7 +295,7 @@ class PaymentRequest:
         paymnt.transactions.append(bfh(raw_tx))
         ref_out = paymnt.refund_to.add()
         ref_out.script = bfh(transaction.Transaction.pay_script(refund_addr))
-        paymnt.memo = "Paid using Electron Novo"
+        paymnt.memo = "Paid using Electron lambda"
         pm = paymnt.SerializeToString()
         payurl = urllib.parse.urlparse(pay_det.payment_url)
         try:

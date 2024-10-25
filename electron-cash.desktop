@@ -1,16 +1,16 @@
-# If you want Electron Novo to appear in a linux app launcher ("start menu"),
+# If you want Electron lambda to appear in a linux app launcher ("start menu"),
 # install this file by doing:
 # sudo desktop-file-install electron-cash.desktop
 
 [Desktop Entry]
-Comment=Lightweight Novo Client
+Comment=Lightweight lambda Client
 Exec=electron-cash %u
-GenericName=Novo Wallet
+GenericName=lambda Wallet
 Icon=electron-cash
-Name=Electron Novo
+Name=Electron lambda
 Categories=Finance;Network;
 StartupNotify=true
-StartupWMClass=Electron Novo
+StartupWMClass=Electron lambda
 Terminal=false
 Type=Application
 MimeType=x-scheme-handler/bitcoincash;x-scheme-handler/cashacct;

@@ -3,8 +3,8 @@
 # Electrum - lightweight Bitcoin client
 # Copyright (C) 2015 Thomas Voegtlin
 #
-# Electron Novo - lightweight Novo Client
-# Copyright (C) 2019 The Electron Novo Developers
+# Electron lambda - lightweight lambda Client
+# Copyright (C) 2019 The Electron lambda Developers
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -63,8 +63,8 @@ class UpdateChecker(QWidget, PrintError):
     _dl_prog = pyqtSignal(object, int) # [0 -> 100] range
 
     #url = "https://www.c3-soft.com/downloads/BitcoinCash/Electron-Cash/update_check" # Testing URL
-    url = "https://raw.github.com/3untz/electron-novo/master/contrib/update_checker/releases.json" # Release URL
-    download_url = "https://novo.money/#download"
+    url = "https://raw.github.com/3untz/electron-lambda/master/contrib/update_checker/releases.json" # Release URL
+    download_url = "https://lambda.money/#download"
 
     VERSION_ANNOUNCEMENT_SIGNING_ADDRESSES = (
         address.Address.from_string("bitcoincash:qphax4cg8sxuc0qnzk6sx25939ma7y877uz04s2z82", net=MainNet), # Calin's key
@@ -74,7 +74,7 @@ class UpdateChecker(QWidget, PrintError):
 
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.setWindowTitle('Electron Novo - ' + _('Update Checker'))
+        self.setWindowTitle('Electron lambda - ' + _('Update Checker'))
         self.content = QVBoxLayout()
         self.content.setContentsMargins(*([10]*4))
 
@@ -224,7 +224,7 @@ class UpdateChecker(QWidget, PrintError):
                 self.cancel_or_check_button.setEnabled(False)
             else:
                 self.heading_label.setText('<h2>' + _("Already up to date") + '</h2>')
-                self.detail_label.setText(_("You are already on the latest version of Electron Novo."))
+                self.detail_label.setText(_("You are already on the latest version of Electron lambda."))
                 self.cancel_or_check_button.setEnabled(True)
         else:
             self.pb.show()
@@ -233,7 +233,7 @@ class UpdateChecker(QWidget, PrintError):
             self.cancel_or_check_button.setEnabled(True)
             self.latest_version_label.setText("")
             self.heading_label.setText('<h2>' + _("Checking for updates...") + '</h2>')
-            self.detail_label.setText(_("Please wait while Electron Novo checks for available updates."))
+            self.detail_label.setText(_("Please wait while Electron lambda checks for available updates."))
 
     def cancel_active(self):
         if self.active_req:

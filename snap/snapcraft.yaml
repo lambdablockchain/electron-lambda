@@ -1,8 +1,8 @@
 name: electron-cash
 version: master
-summary: Novo thin client
+summary: lambda thin client
 description: |
-  Lightweight Novo client
+  Lightweight lambda client
 
 grade: devel # must be 'stable' to release into candidate/stable channels
 confinement: strict

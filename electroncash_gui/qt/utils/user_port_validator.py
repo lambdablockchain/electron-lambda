@@ -1,4 +1,4 @@
-# Electron Novo - lightweight Bitcoin client
+# Electron lambda - lightweight Bitcoin client
 # Copyright (C) 2020 Axel Gembe <derago@gmail.com>
 #
 # Permission is hereby granted, free of charge, to any person
