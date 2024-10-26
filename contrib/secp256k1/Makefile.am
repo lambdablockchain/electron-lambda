@@ -1,4 +1,4 @@
-ACLOCAL_AMFLAGS = -I build-aux/m4
+# ACLOCAL_AMFLAGS = -I build-aux/m4
 
 SECP256K1_LIB = libsecp256k1.la
 lib_LTLIBRARIES = $(SECP256K1_LIB)
@@ -178,5 +178,11 @@ endif
 if ENABLE_MODULE_SCHNORR
 include src/modules/schnorr/Makefile.am.include
 endif
+libsecp256k1_la_LDFLAGS = -no-undefined
+LDFLAGS = -no-undefined
+libsecp256k1_la_LDFLAGS = -no-undefined
+LDFLAGS = -no-undefined
+libsecp256k1_la_LDFLAGS = -no-undefined
+LDFLAGS = -no-undefined
 libsecp256k1_la_LDFLAGS = -no-undefined
 LDFLAGS = -no-undefined

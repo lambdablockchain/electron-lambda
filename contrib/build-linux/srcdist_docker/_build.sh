@@ -7,7 +7,7 @@ CONTRIB="$PROJECT_ROOT/contrib"
 DISTDIR="$PROJECT_ROOT/dist"
 
 export GCC_STRIP_BINARIES="1"
-export GIT_SUBMODULE_FLAGS="--recommend-shallow --depth 1"
+export GIT_SUBMODULE_FLAGS="--depth 1"
 
 . "$CONTRIB"/base.sh
 
